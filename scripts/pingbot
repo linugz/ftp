@@ -1,0 +1,10 @@
+#!/bin/bash
+
+while read url; do
+  curl -X POST -H "Content-Type: application/json" \
+    -d "{\"url\":\"$url\"}" \
+    https://www.pingbot.cf/api
+
+  echo
+done < $1
+
